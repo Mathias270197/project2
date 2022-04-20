@@ -19,12 +19,14 @@ export const SinglePostPage = ({ match }) => {
   return (
     <section>
       <article className="post">
-        <h2>{post.title}</h2>
-        <h5>{post.subtitle}</h5>
+        <div className='card-body card my-5'>
+        <h2 className='py-5 text-center'>{post.title}</h2>
+        <h5 className='py-3'>{post.subtitle}</h5>
         <p className="post-content">{post.content}</p>
-        <Link to={`/editPost/${post.id}`} className="button">
+        <Link to={`/editPost/${post.id}`} className="btn btn-primary" style={{backgroundColor: "#5cfc70", borderColor: "#0e2712", color: "#0e2712"}}>
             Edit post
         </Link>
+        </div>
       </article>
     </section>
   )

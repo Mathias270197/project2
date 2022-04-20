@@ -18,18 +18,18 @@ export const AddPostForm = () => {
   const onContentChanged = e => setContent(e.target.value)
 
   const onSavePostClicked = () => {
-      if (title && subtitle && content){
-          dispatch(postAdded(title, subtitle, content))
-          setTitle('')
-          setSubtitle('')
-          setContent('')
-          setConfirm(true);
-      }
+    if (title && subtitle && content) {
+      dispatch(postAdded(title, subtitle, content))
+      setTitle('')
+      setSubtitle('')
+      setContent('')
+      setConfirm(true);
+    }
   }
 
-  if (confirm){
-    return(
-      <Navigate to={{pathname: "/"}}/>
+  if (confirm) {
+    return (
+      <Navigate to={{ pathname: "/" }} />
     )
   }
 
@@ -37,30 +37,39 @@ export const AddPostForm = () => {
     <section>
       <h2>Add a New Post</h2>
       <form>
-        <label htmlFor="postTitle">Post Title:</label>
-        <input
-          type="text"
-          id="postTitle"
-          name="postTitle"
-          value={title}
-          onChange={onTitleChanged}
-        />
-        <label htmlFor="postSubtitle">Post Subtitle:</label>
-        <input
-          type="text"
-          id="postSubtitle"
-          name="postSubtitle"
-          value={subtitle}
-          onChange={onSubtitleChanged}
-        />
-        <label htmlFor="postContent">Content:</label>
-        <textarea
-          id="postContent"
-          name="postContent"
-          value={content}
-          onChange={onContentChanged}
-        />
-        <button type="button" onClick={onSavePostClicked}>Save Post</button>
+        <div className='form-group py-2'>
+          <label htmlFor="postTitle">Post Title:</label>
+          <input
+            className='form-control'
+            type="text"
+            id="postTitle"
+            name="postTitle"
+            value={title}
+            onChange={onTitleChanged}
+          />
+        </div>
+        <div className='form-group py-2'>
+          <label htmlFor="postSubtitle">Post Subtitle:</label>
+          <input
+            className='form-control'
+            type="text"
+            id="postSubtitle"
+            name="postSubtitle"
+            value={subtitle}
+            onChange={onSubtitleChanged}
+          />
+        </div>
+        <div className='form-group py-2'>
+          <label htmlFor="postContent">Content:</label>
+          <textarea
+            className='form-control'
+            id="postContent"
+            name="postContent"
+            value={content}
+            onChange={onContentChanged}
+          />
+        </div>
+        <button type="button" className='btn btn-primary' style={{backgroundColor: "#5cfc70", borderColor: "#0e2712", color: "#0e2712"}} onClick={onSavePostClicked}>Save Post</button>
       </form>
     </section>
   )
