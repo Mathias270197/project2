@@ -12,7 +12,7 @@ const PostExcerpt = ({ post }) => {
     <>
       <div className="card text-center col-md-5 my-5" style={{backgroundColor: "#98fb98"}}>
         <div className="card-body">
-          <img src={post.imageUrls} width="200" height="400" className="card-img-top img-responsive"></img>
+          <img src={post.imageUrls} width="200" height="400" className="card-img-top img-responsive" alt="news article"></img>
           <h1>{post.title}</h1>
           <h5 className="card-title">{post.subtitle}</h5>
           <p className="card-text">{post.content.substring(0, 100)}...</p>
