@@ -10,7 +10,7 @@ import Pagination from '../../components/Pagination';
 const PostExcerpt = ({ post }) => {
   return (
     <>
-      <div className="card text-center col-md-5 my-5" style={{backgroundColor: "#2d7c37", color: "white"}}>
+      <div className="card text-center col-md-5 my-5" style={{backgroundColor: "#98fb98"}}>
         <div className="card-body">
           <img src={post.imageUrls} width="200" height="400" className="card-img-top img-responsive"></img>
           <h1>{post.title}</h1>
